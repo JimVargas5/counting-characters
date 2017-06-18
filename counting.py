@@ -11,12 +11,31 @@ def LetterTable(phrase):
             print(table)
 
 
+def check():
+    print("Do you want to continue?")
+    thing = input("Y or N?"+'\n'+">>> ")
+    if (thing == "Y") or (thing == "y"):
+        main()
+    elif (thing == "N") or (thing == "n"):
+        print("Quitting...")
+        exit()
+    elif len(thing) == 0:
+        print("You didn't enter anything.")
+        print("Quitting...")
+        exit()
+    elif len(thing) > 1:
+        print("The program needs a one letter anser.", '\n')
+        check()
+    else:
+        print("You entered something invalid.")
+        print("Quitting...")
+        exit()
+
 def main():
     TheString = input("Input your string:"+'\n'+">>> ")
-    #test = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc accumsan sem ut ligula scelerisque sollicitudin. Ut at sagittis augue. Praesent quis rhoncus justo. Aliquam erat volutpat. Donec sit amet suscipit metus, non lobortis massa. Vestibulum augue ex, dapibus ac suscipit vel, volutpat eget massa. Donec nec velit non ligula efficitur luctus."
-    #LetterTable(test)
     if len(TheString) == 0:
-        print("You didn't input anything.")
+        print("You didn't input anything.", '\n')
+        check()
     else:
         LetterTable(TheString)
 
